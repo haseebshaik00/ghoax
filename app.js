@@ -8,23 +8,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var port = process.env.PORT || 8086;
 
-app.get("/", function(req, res){
-	res.send("Hi");
-});
-
 app.get("/", function(req, res)
 {
-	res.send("Hi");
+	res.render("home");
 });
 
-app.get("/", function(req, res)
+app.get("/tutorials", function(req, res)
 {
-	res.send("Hi");
+	res.render("tutorials");
 });
 
-app.get("/", function(req, res)
+app.get("/songs", function(req, res)
 {
-	res.send("Hi");
+	res.render("songs");
+});
+
+app.get("/about", function(req, res){
+	res.render("about");
+});
+
+app.get("/contact", function(req, res)
+{
+	res.render("contact");
 });
 
 app.listen(port, function(){
